@@ -1,0 +1,141 @@
+package com.atmecs.pages;
+
+import static org.testng.Assert.assertEquals;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import com.atmecs.constant.Findloc;
+import com.atmecs.constant.TimeOut;
+import com.atmecs.constant.ValidateData;
+import com.atmecs.helper.CommonUtlity;
+import com.atmecs.reports.LogReport;
+
+public class TutorialsNinja {
+	WebDriver driver;
+	CommonUtlity WebUtility;
+	LogReport log;
+	Findloc loc;
+	ValidateData validatedata;
+
+	public TutorialsNinja(WebDriver driver) {
+		this.driver = driver;
+		
+		// loc = ReadProp.loadProperty(FilePath.LOCATOR_FILE);
+		WebUtility = new CommonUtlity(driver);
+		loc = new Findloc();
+	}
+
+	public void homePageLanding() {
+		log = new LogReport();
+		validatedata = new ValidateData();
+
+		String webPageTitle = driver.getTitle();
+		System.out.println(validatedata.getData("HomePageTitle"));
+
+		assertEquals(webPageTitle, validatedata.getData("HomePageTitle"), "Assertion for landing on webpage failed");
+		log.info("Assertion for home page landing passed");
+	}
+
+	public void addToCartphone(String product, String productQuantity, String ExpProductPrice, String expExTax) {
+		validatedata = new ValidateData();
+		log = new LogReport();
+		WebUtility.clickElement(loc.getlocator("loc.search.text"));
+		WebUtility.clickAndSendText(loc.getlocator("loc.search.text"), TimeOut.TIMEOUT_INSECONDS, product);
+		WebUtility.clickElement(loc.getlocator("loc.SearchButtom.click"));
+		WebUtility.clickElement(loc.getlocator("loc.iphoneimage.click"));
+
+		WebUtility.clearTextData(loc.getlocator("loc.iphonequantityinput.text"));
+		WebUtility.clickAndSendText(loc.getlocator("loc.iphonequantityinput.text"), TimeOut.TIMEOUT_INSECONDS,
+				productQuantity);
+
+		WebUtility.clickElement(loc.getlocator("loc.iphoneaddtocart.click"));
+		WebUtility.clearTextData(loc.getlocator("loc.search.text"));
+		System.out.println(product);
+
+//		if (product.equalsIgnoreCase("iPhone")) {
+//			try {
+//				Thread.sleep(3000);
+//			} catch (InterruptedException e) { // TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			String avablityStatus = WebUtility.getElement(loc.getlocator("loc.productavablityiphone.text")).getText();
+//			System.out.println(avablityStatus);
+//			System.out.println(validatedata.getData("Avaibality"));
+//
+//			assertEquals(avablityStatus, validatedata.getData("Avaibality"),
+//					"Assertion  product availablity failed" + "" + product);
+//
+//			log.info("Assertion  product availablity passed " + "" + product);
+//
+//			String iphonedescription = WebUtility.getElement(loc.getlocator("loc.productdesc.text")).getText();
+//
+//			Assert.assertTrue(iphonedescription.contains(validatedata.getData("iPhonedescription")),
+//					"Assertion for product iPhone description failed" + "" + product);
+//			log.info("Assertion for product iPhone description passed" + "" + product);
+//
+//		} else {
+//
+//			String avablityStatus = WebUtility.getElement(loc.getlocator("loc.productavablitymac.text")).getText();
+//			System.out.println(avablityStatus);
+//			assertEquals(avablityStatus, validatedata.getData("Avaibality"),
+//					"Assertion  product availablity failed" + "" + product);
+//			log.info("Assertion  product availablity passed " + "" + product);
+//			String macdescription = WebUtility.getElement(loc.getlocator("loc.productdesc.text")).getText();
+//
+//			Assert.assertTrue(macdescription.contains(validatedata.getData("MacDescription")),
+//					"Assertion for product mac description failed" + "" + product);
+//			log.info("Assertion for product mac description passed" + "" + product);
+//
+//		}
+
+		String productPrice = WebUtility.getElement(loc.getlocator("loc.productprice.text")).getText();
+		System.out.println(productPrice);
+		assertEquals(productPrice, "" + ExpProductPrice, "Assertion  product price failed" + " " + product);
+		log.info("Assertion  product price passed " + "" + product);
+		String exTax = WebUtility.getElement(loc.getlocator("loc.extax.text")).getText();
+		assertEquals(exTax, "" + expExTax, "Assertion  product extax failed" + " " + product);
+		log.info("Assertion  product extax passed " + "" + product);
+		//WebUtility.clickElement(loc.getlocator("loc.iphoneimage.click"));
+		
+		
+	}
+	public void cartValidation(String iphoneAdded,String macAdded,String totalAmount,String UpdatedTotalAmount) {
+		log = new LogReport();
+		WebUtility.clickElement(loc.getlocator("loc.clickon.cart"));
+		
+		String cartiphonevalue=WebUtility.getElement(loc.getlocator("loc.cartnoofiphone.text")).getText();
+		System.out.println(cartiphonevalue);
+		assertEquals(cartiphonevalue, iphoneAdded, "Assertion failed for iphone added in cart");
+		log.info("Assertion passed iphone added in cart");
+		
+		String cartmacvalue=WebUtility.getElement(loc.getlocator("loc.cartnoofmac.text")).getText();
+		System.out.println(cartmacvalue);
+		assertEquals(cartmacvalue, macAdded, "Assertion failed for iphone added in cart");
+		log.info("Assertion passed mac added in cart");
+		
+		
+		String totalPrice=WebUtility.getElement(loc.getlocator("loc.totalprice.text")).getText();
+		System.out.println(totalPrice);
+		assertEquals(totalPrice,""+totalAmount, "Assertion failed for totalamount added in cart");
+		log.info("Assertion passed for total amount");
+		WebUtility.clickElement(loc.getlocator("loc.removeitemmac.click"));
+		WebUtility.clickElement(loc.getlocator("loc.clickon.cart"));
+		String updatedTotalPrice=WebUtility.getElement(loc.getlocator("loc.totalprice.text")).getText();
+		System.out.println(totalPrice);
+		assertEquals(updatedTotalPrice,""+UpdatedTotalAmount, "Assertion failed for totalamount added in cart");
+		log.info("Assertion passed for total amount");
+		
+	}
+	public void negativeDataSearch(String negativeData) {
+		WebUtility.clickElement(loc.getlocator("loc.search.text"));
+		WebUtility.clickAndSendText(loc.getlocator("loc.search.text"), TimeOut.TIMEOUT_INSECONDS, negativeData);
+		boolean negativeMessage=WebUtility.isDisplayed(loc.getlocator("loc.negativemsg.text"));
+		assertEquals(negativeMessage, true, "Validation for negative data passed");
+		log.info("Validation for negative data passed");
+		WebUtility.clickElement(loc.getlocator("loc.SearchButtom.click"));
+		
+	}
+	
+
+}
