@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="6" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="42945" started-at="2019-11-11T16:31:56Z" finished-at="2019-11-11T16:32:39Z">
+  <suite name="Default suite" duration-ms="37127" started-at="2019-11-12T10:59:40Z" finished-at="2019-11-12T11:00:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="42945" started-at="2019-11-11T16:31:56Z" finished-at="2019-11-11T16:32:39Z">
+    <test name="Default test" duration-ms="37127" started-at="2019-11-12T10:59:40Z" finished-at="2019-11-12T11:00:17Z">
       <class name="com.atmecs.scripts.HeatClinic">
-        <test-method status="PASS" signature="intitailizeBrowser()[pri:0, instance:com.atmecs.scripts.HeatClinic@3abbfa04]" name="intitailizeBrowser" is-config="true" duration-ms="6390" started-at="2019-11-11T16:31:56Z" finished-at="2019-11-11T16:32:03Z">
+        <test-method status="PASS" signature="intitailizeBrowser()[pri:0, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="intitailizeBrowser" is-config="true" duration-ms="6436" started-at="2019-11-12T10:59:40Z" finished-at="2019-11-12T10:59:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- intitailizeBrowser -->
-        <test-method status="PASS" signature="urlqw()[pri:0, instance:com.atmecs.scripts.HeatClinic@3abbfa04]" name="urlqw" is-config="true" duration-ms="5540" started-at="2019-11-11T16:32:03Z" finished-at="2019-11-11T16:32:08Z">
+        <test-method status="PASS" signature="urlqw()[pri:0, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="urlqw" is-config="true" duration-ms="5074" started-at="2019-11-12T10:59:47Z" finished-at="2019-11-12T10:59:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- urlqw -->
-        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@3abbfa04]" name="menuClick" duration-ms="3879" started-at="2019-11-11T16:32:09Z" data-provider="indexInput" finished-at="2019-11-11T16:32:13Z">
+        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="menuClick" duration-ms="4511" started-at="2019-11-12T10:59:53Z" data-provider="indexInput" finished-at="2019-11-12T10:59:57Z">
           <params>
             <param index="0">
               <value>
@@ -31,7 +31,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- menuClick -->
-        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@3abbfa04]" name="menuClick" duration-ms="3595" started-at="2019-11-11T16:32:13Z" data-provider="indexInput" finished-at="2019-11-11T16:32:17Z">
+        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="menuClick" duration-ms="3675" started-at="2019-11-12T10:59:57Z" data-provider="indexInput" finished-at="2019-11-12T11:00:01Z">
           <params>
             <param index="0">
               <value>
@@ -47,7 +47,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- menuClick -->
-        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@3abbfa04]" name="menuClick" duration-ms="3482" started-at="2019-11-11T16:32:17Z" data-provider="indexInput" finished-at="2019-11-11T16:32:20Z">
+        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="menuClick" duration-ms="3530" started-at="2019-11-12T11:00:01Z" data-provider="indexInput" finished-at="2019-11-12T11:00:04Z">
           <params>
             <param index="0">
               <value>
@@ -63,7 +63,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- menuClick -->
-        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@3abbfa04]" name="menuClick" duration-ms="3462" started-at="2019-11-11T16:32:20Z" data-provider="indexInput" finished-at="2019-11-11T16:32:24Z">
+        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="menuClick" duration-ms="3487" started-at="2019-11-12T11:00:04Z" data-provider="indexInput" finished-at="2019-11-12T11:00:08Z">
           <params>
             <param index="0">
               <value>
@@ -79,7 +79,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- menuClick -->
-        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@3abbfa04]" name="menuClick" duration-ms="3484" started-at="2019-11-11T16:32:24Z" data-provider="indexInput" finished-at="2019-11-11T16:32:27Z">
+        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="menuClick" duration-ms="3544" started-at="2019-11-12T11:00:08Z" data-provider="indexInput" finished-at="2019-11-12T11:00:11Z">
           <params>
             <param index="0">
               <value>
@@ -95,7 +95,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- menuClick -->
-        <test-method status="FAIL" signature="menuTravelTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.atmecs.scripts.HeatClinic@3abbfa04]" name="menuTravelTest" duration-ms="12129" started-at="2019-11-11T16:32:27Z" data-provider="logindata" finished-at="2019-11-11T16:32:39Z">
+        <test-method status="PASS" signature="menuTravelTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="menuTravelTest" duration-ms="5152" started-at="2019-11-12T11:00:11Z" data-provider="logindata" finished-at="2019-11-12T11:00:17Z">
           <params>
             <param index="0">
               <value>
@@ -134,7 +134,7 @@
             </param>
             <param index="7">
               <value>
-                <![CDATA[14.99]]>
+                <![CDATA[$29.98]]>
               </value>
             </param>
             <param index="8">
@@ -148,71 +148,13 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
-            <message>
-              <![CDATA[stale element reference: element is not attached to the page document
-  (Session info: chrome=78.0.3904.97)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'ATMECSINLT-033', ip: '55.55.52.127', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.97, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\RISHAV~1.KUM\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:60836}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 070816e7199962ea1fc5762021cace80]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=78.0.3904.97)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'ATMECSINLT-033', ip: '55.55.52.127', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.97, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: C:\Users\RISHAV~1.KUM\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:60836}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 070816e7199962ea1fc5762021cace80
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:166)
-at com.atmecs.pages.MenuTravel.validatePrice(MenuTravel.java:113)
-at com.atmecs.scripts.HeatClinic.menuTravelTest(HeatClinic.java:50)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- menuTravelTest -->
+        <test-method status="PASS" signature="end()[pri:0, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="end" is-config="true" duration-ms="797" started-at="2019-11-12T11:00:17Z" finished-at="2019-11-12T11:00:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- end -->
       </class> <!-- com.atmecs.scripts.HeatClinic -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

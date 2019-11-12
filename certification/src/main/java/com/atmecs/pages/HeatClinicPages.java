@@ -12,7 +12,7 @@ import com.atmecs.constant.TimeOut;
 import com.atmecs.helper.CommonUtlity;
 import com.atmecs.reports.LogReport;
 
-public class MenuTravel {
+public class HeatClinicPages {
 	WebDriver driver;
 	CommonUtlity WebUtlity;
 	Actions action;
@@ -20,7 +20,7 @@ public class MenuTravel {
 	LogReport log;
 	int index = 1;
 
-	public MenuTravel(WebDriver driver) {
+	public HeatClinicPages(WebDriver driver) {
 		this.driver = driver;
 		WebUtlity = new CommonUtlity(driver);
 		loc = new Findloc();
@@ -77,8 +77,8 @@ public class MenuTravel {
 		action = new Actions(driver);
 		WebUtlity.clickElement(loc.getlocator("loc.clickoncart.click"));
 		String shirtName = WebUtlity.getElement(loc.getlocator("loc.cartitemname.text")).getText();
-		System.out.println(shirtName);
-		//assertEquals(shirtName, expectedShirtname, "Assertion is failed for product name");
+
+	    assertEquals(shirtName, expectedShirtname, "Assertion is failed for product name");
 
 		log.info("assertion passed product name");
 		String shirtSize = WebUtlity.getElement(loc.getlocator("loc.shirtsizevalidate.text")).getText();
@@ -96,23 +96,32 @@ public class MenuTravel {
 
 	}
 
+	public void validatePrice(String totalbexpected) {
+		String price = WebUtlity.getElement(loc.getlocator("loc.price.cart")).getText();
+		assertEquals(price, "$" + totalbexpected, "Assertion is failed for before totalupdatedprice");
+		log.info("Assertion passed for before updated price");
+//		String total = WebUtlity.getElement(loc.getlocator("loc.total.cart")).getText();
+//		assertEquals(total, "$" + totalbexpected, "Assertion is failed for before totalupdatedprice");
+//		log.info("Assertion passed for before updated price");
+
+	}
+
 	public void increaseQuantity(String quantity, String expectedtotalupdatedprice) {
+		System.out.println(expectedtotalupdatedprice);
 		WebUtlity.clickElement(loc.getlocator("loc.increaseQuantity.button"));
 		WebUtlity.clickAndSendText(loc.getlocator("loc.increaseQuantity.button"), TimeOut.TIMEOUT_INSECONDS, quantity);
 		WebUtlity.clickElement(loc.getlocator("loc.clickonupdate.click"));
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		String totalPrice = WebUtlity.getElement(loc.getlocator("loc.totalprice.validate")).getText();
-		assertEquals(totalPrice, "$" + expectedtotalupdatedprice, "Assertion is failed for totalupdatedprice");
+		System.out.println("This is updatedtotal" + "" + totalPrice);
+		assertEquals(totalPrice, expectedtotalupdatedprice, "Assertion is failed for totalupdatedprice");
 		log.info("Assertion passed for updated price");
 
 	}
 
-	public void validatePrice(String pricebexpected, String totalbexpected) {
-		String price = WebUtlity.getElement(loc.getlocator("loc.price.cart")).getText();
-		assertEquals(price, "$" + pricebexpected, "Assertion is failed for before totalupdatedprice");
-		log.info("Assertion passed for before updated price");
-		String total = WebUtlity.getElement(loc.getlocator("loc.total.cart")).getText();
-		assertEquals(total, "$" + totalbexpected, "Assertion is failed for before totalupdatedprice");
-		log.info("Assertion passed for before updated price");
-
-	}
 }

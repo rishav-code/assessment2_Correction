@@ -38,7 +38,7 @@ public class TutorialsNinjaScript extends TestBase {
 		
 	}
 @Test(priority = 2, dataProvider = "TutorialsNinja", dataProviderClass = Dataprovide.class)
-	public void pageflow(String product,String productQuantity,String productPrice,String extax) {
+	public void pageflowValidations(String product,String productQuantity,String productPrice,String extax) {
 		flow= new TutorialsNinja(driver);
 		
 		flow.addToCartphone(product,productQuantity,productPrice,extax);
@@ -46,14 +46,14 @@ public class TutorialsNinjaScript extends TestBase {
 		
 	}
 @Test(priority = 3, dataProvider = "TutorialsNinjaCart", dataProviderClass = Dataprovide.class)
-public void cartflow(String iphoneAdded,String macAdded,String totalAmount,String UpdatedTotalAmount,String negativeData) {
+public void cartflowValidations(String iphoneAdded,String macAdded,String totalAmount,String UpdatedTotalAmount,String negativeData) {
 	flow= new TutorialsNinja(driver);
 	flow.cartValidation(iphoneAdded, macAdded,totalAmount,UpdatedTotalAmount);
 	
 	
 }
 @Test(priority = 4, dataProvider = "TutorialsNinjaCart", dataProviderClass = Dataprovide.class)
-public void negativeData(String iphoneAdded,String macAdded,String totalAmount,String UpdatedTotalAmount,String negativeData) {
+public void negativeDataValidation(String iphoneAdded,String macAdded,String totalAmount,String UpdatedTotalAmount,String negativeData) {
 	flow= new TutorialsNinja(driver);
 	flow.negativeDataSearch(negativeData);
 }

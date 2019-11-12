@@ -2,16 +2,14 @@ package com.atmecs.testbase;
 
 import java.io.IOException;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
 
 import com.atmecs.constant.FilePath;
 import com.atmecs.util.ReadProp;
@@ -55,6 +53,7 @@ public class TestBase {
 				System.setProperty("webdriver.edge.driver", FilePath.IE_PATH);
 				DesiredCapabilities ieCaps = DesiredCapabilities.internetExplorer();
 				ieCaps.setCapability(InternetExplorerDriver.INITIAL_BROWSER_URL, url);
+				
 				driver = new InternetExplorerDriver(ieCaps);
 			}
 		} else if (normal.equalsIgnoreCase("GRID")) {
@@ -70,11 +69,11 @@ public class TestBase {
 
 	
 
-//	}	  @AfterTest
-//		 public void end() 
-//		  { driver.quit();
-//		  
-//}
+	}	  @AfterClass
+		 public void end() { 
+		driver.quit();
+		  
+}
 
 }
-}
+

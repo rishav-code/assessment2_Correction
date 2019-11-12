@@ -9,6 +9,7 @@ import com.atmecs.constant.Findloc;
 import com.atmecs.constant.TimeOut;
 import com.atmecs.constant.ValidateData;
 import com.atmecs.helper.CommonUtlity;
+import com.atmecs.helper.Waits;
 import com.atmecs.reports.LogReport;
 
 public class TutorialsNinja {
@@ -17,10 +18,11 @@ public class TutorialsNinja {
 	LogReport log;
 	Findloc loc;
 	ValidateData validatedata;
+	Waits wait;
 
 	public TutorialsNinja(WebDriver driver) {
 		this.driver = driver;
-		
+
 		// loc = ReadProp.loadProperty(FilePath.LOCATOR_FILE);
 		WebUtility = new CommonUtlity(driver);
 		loc = new Findloc();
@@ -53,89 +55,93 @@ public class TutorialsNinja {
 		WebUtility.clearTextData(loc.getlocator("loc.search.text"));
 		System.out.println(product);
 
-//		if (product.equalsIgnoreCase("iPhone")) {
-//			try {
-//				Thread.sleep(3000);
-//			} catch (InterruptedException e) { // TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//			String avablityStatus = WebUtility.getElement(loc.getlocator("loc.productavablityiphone.text")).getText();
-//			System.out.println(avablityStatus);
-//			System.out.println(validatedata.getData("Avaibality"));
-//
-//			assertEquals(avablityStatus, validatedata.getData("Avaibality"),
-//					"Assertion  product availablity failed" + "" + product);
-//
-//			log.info("Assertion  product availablity passed " + "" + product);
-//
-//			String iphonedescription = WebUtility.getElement(loc.getlocator("loc.productdesc.text")).getText();
-//
-//			Assert.assertTrue(iphonedescription.contains(validatedata.getData("iPhonedescription")),
-//					"Assertion for product iPhone description failed" + "" + product);
-//			log.info("Assertion for product iPhone description passed" + "" + product);
-//
-//		} else {
-//
-//			String avablityStatus = WebUtility.getElement(loc.getlocator("loc.productavablitymac.text")).getText();
-//			System.out.println(avablityStatus);
-//			assertEquals(avablityStatus, validatedata.getData("Avaibality"),
-//					"Assertion  product availablity failed" + "" + product);
-//			log.info("Assertion  product availablity passed " + "" + product);
-//			String macdescription = WebUtility.getElement(loc.getlocator("loc.productdesc.text")).getText();
-//
-//			Assert.assertTrue(macdescription.contains(validatedata.getData("MacDescription")),
-//					"Assertion for product mac description failed" + "" + product);
-//			log.info("Assertion for product mac description passed" + "" + product);
-//
-//		}
+		if (product.equalsIgnoreCase("iPhone")) {
+			wait = new Waits();
+
+			String avablityStatus = WebUtility.getElement(loc.getlocator("loc.productavablityiphone.text")).getText();
+			System.out.println(avablityStatus);
+			System.out.println(validatedata.getData("Avaibality"));
+
+			assertEquals(avablityStatus, validatedata.getData("Avaibality"),
+					"Assertion  product availablity failed" + "" + product);
+
+			log.info("Assertion  product availablity passed " + "" + product);
+			// WebUtility.scrollDownPage(300);
+			System.out.println("Description validation iphone started");
+
+			String iphonedescription = WebUtility.getElement(loc.getlocator("loc.productdesciphone.text")).getText();
+			System.out.println("Description validation iphone continue");
+			Assert.assertTrue(iphonedescription.contains(validatedata.getData("iPhonedescription")),
+					"Assertion for product iPhone description failed" + " of " + product);
+			log.info("Assertion for product iPhone description passed" + " of " + product);
+
+		}
+		if (product.equalsIgnoreCase("MacBook Air")) {
+
+			String avablityStatus = WebUtility.getElement(loc.getlocator("loc.productavablitymac.text")).getText();
+			System.out.println(avablityStatus);
+			assertEquals(avablityStatus, validatedata.getData("Avaibality"),
+					"Assertion  product availablity failed" + "" + product);
+			log.info("Assertion  product availablity passed " + "" + product);
+			WebUtility.scrollDownPage(300);
+
+			String macdescription = WebUtility.getElement(loc.getlocator("loc.productdesc.text")).getText();
+
+			Assert.assertTrue(macdescription.contains(validatedata.getData("MacDescription")),
+					"Assertion for product macbook description failed" + "   " + product);
+			log.info("Assertion for product macbook description passed" + "   " + product);
+
+		}
 
 		String productPrice = WebUtility.getElement(loc.getlocator("loc.productprice.text")).getText();
 		System.out.println(productPrice);
 		assertEquals(productPrice, "" + ExpProductPrice, "Assertion  product price failed" + " " + product);
 		log.info("Assertion  product price passed " + "" + product);
 		String exTax = WebUtility.getElement(loc.getlocator("loc.extax.text")).getText();
-		assertEquals(exTax, "" + expExTax, "Assertion  product extax failed" + " " + product);
+		assertEquals(exTax, "" + expExTax, "Assertion  product extax failed" + "  " + product);
 		log.info("Assertion  product extax passed " + "" + product);
-		//WebUtility.clickElement(loc.getlocator("loc.iphoneimage.click"));
-		
-		
+		// WebUtility.clickElement(loc.getlocator("loc.iphoneimage.click"));
+
 	}
-	public void cartValidation(String iphoneAdded,String macAdded,String totalAmount,String UpdatedTotalAmount) {
+
+	public void cartValidation(String iphoneAdded, String macAdded, String totalAmount, String UpdatedTotalAmount) {
 		log = new LogReport();
 		WebUtility.clickElement(loc.getlocator("loc.clickon.cart"));
-		
-		String cartiphonevalue=WebUtility.getElement(loc.getlocator("loc.cartnoofiphone.text")).getText();
+
+		String cartiphonevalue = WebUtility.getElement(loc.getlocator("loc.cartnoofiphone.text")).getText();
 		System.out.println(cartiphonevalue);
 		assertEquals(cartiphonevalue, iphoneAdded, "Assertion failed for iphone added in cart");
 		log.info("Assertion passed iphone added in cart");
-		
-		String cartmacvalue=WebUtility.getElement(loc.getlocator("loc.cartnoofmac.text")).getText();
+
+		String cartmacvalue = WebUtility.getElement(loc.getlocator("loc.cartnoofmac.text")).getText();
 		System.out.println(cartmacvalue);
 		assertEquals(cartmacvalue, macAdded, "Assertion failed for iphone added in cart");
 		log.info("Assertion passed mac added in cart");
-		
-		
-		String totalPrice=WebUtility.getElement(loc.getlocator("loc.totalprice.text")).getText();
+
+		String totalPrice = WebUtility.getElement(loc.getlocator("loc.totalprice.text")).getText();
 		System.out.println(totalPrice);
-		assertEquals(totalPrice,""+totalAmount, "Assertion failed for totalamount added in cart");
+		assertEquals(totalPrice, "" + totalAmount, "Assertion failed for totalamount added in cart");
 		log.info("Assertion passed for total amount");
 		WebUtility.clickElement(loc.getlocator("loc.removeitemmac.click"));
 		WebUtility.clickElement(loc.getlocator("loc.clickon.cart"));
-		String updatedTotalPrice=WebUtility.getElement(loc.getlocator("loc.totalprice.text")).getText();
+		String updatedTotalPrice = WebUtility.getElement(loc.getlocator("loc.totalprice.text")).getText();
 		System.out.println(totalPrice);
-		assertEquals(updatedTotalPrice,""+UpdatedTotalAmount, "Assertion failed for totalamount added in cart");
+		assertEquals(updatedTotalPrice, "" + UpdatedTotalAmount, "Assertion failed for totalamount added in cart");
 		log.info("Assertion passed for total amount");
-		
+
 	}
+
 	public void negativeDataSearch(String negativeData) {
+		log = new LogReport();
+		System.out.println("Hi");
+		System.out.println("this is" + " " + negativeData);
 		WebUtility.clickElement(loc.getlocator("loc.search.text"));
 		WebUtility.clickAndSendText(loc.getlocator("loc.search.text"), TimeOut.TIMEOUT_INSECONDS, negativeData);
-		boolean negativeMessage=WebUtility.isDisplayed(loc.getlocator("loc.negativemsg.text"));
-		assertEquals(negativeMessage, true, "Validation for negative data passed");
+		WebUtility.clickElement(loc.getlocator("loc.SearchButton2.click"));
+		boolean negativeMessage = WebUtility.isDisplayed(loc.getlocator("loc.negativemsg.text"));
+		assertEquals(negativeMessage, true, "Validation for negative data failed");
 		log.info("Validation for negative data passed");
-		WebUtility.clickElement(loc.getlocator("loc.SearchButtom.click"));
-		
+
 	}
-	
 
 }

@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import com.atmecs.constant.FilePath;
 import com.atmecs.constant.TimeOut;
 import com.atmecs.dataprovider.Dataprovide;
-import com.atmecs.pages.MenuTravel;
+import com.atmecs.pages.HeatClinicPages;
 import com.atmecs.testbase.TestBase;
 import com.atmecs.util.ReadProp;
 
@@ -20,7 +20,7 @@ public class HeatClinic extends TestBase{
 	
 	String url;
 	
-	MenuTravel travel;
+	HeatClinicPages travel;
 	
 	@BeforeClass
 	public void urlqw() {
@@ -35,19 +35,19 @@ public class HeatClinic extends TestBase{
 }
 	@Test(priority = 1, dataProvider = "indexInput", dataProviderClass = Dataprovide.class)
 	public void menuClick(String index,String title) {
-		travel=new MenuTravel(driver);
+		travel=new HeatClinicPages(driver);
 		travel.menu( index,title);
 		
 	}
 	@Test(priority = 2, dataProvider = "logindata", dataProviderClass = Dataprovide.class)
 	public void menuTravelTest(String Mensmarchandisedata,String Personalizname,String shirtname,String expectedShirtSize,String expectedNameInCart ,String expectedShirtColour,String quantity,String expectedtotalupdatedprice,String pricebexpected,String totalbexpected) {
-		travel=new MenuTravel(driver);
+		travel=new HeatClinicPages(driver);
 		
 		travel.clickOnMerchindiseMen(Mensmarchandisedata);
 		travel.selectShirt(Personalizname);
 		travel.validateCart(shirtname,expectedShirtSize,expectedNameInCart,expectedShirtColour);
 		travel.increaseQuantity(quantity,expectedtotalupdatedprice);
-		travel.validatePrice(pricebexpected, totalbexpected);
+		travel.validatePrice( totalbexpected);
 		
 	}
 

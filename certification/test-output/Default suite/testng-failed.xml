@@ -8,6 +8,7 @@
           <include name="menuTravelTest" invocation-numbers="0"/>
           <include name="urlqw"/>
           <include name="intitailizeBrowser"/>
+          <include name="end"/>
         </methods>
       </class> <!-- com.atmecs.scripts.HeatClinic -->
     </classes>
