@@ -5,10 +5,10 @@
     <classes>
       <class name="com.atmecs.scripts.HeatClinic">
         <methods>
-          <include name="menuTravelTest" invocation-numbers="0"/>
           <include name="urlqw"/>
           <include name="intitailizeBrowser"/>
           <include name="end"/>
+          <include name="menuClick" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.atmecs.scripts.HeatClinic -->
     </classes>

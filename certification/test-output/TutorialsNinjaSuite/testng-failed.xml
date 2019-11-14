@@ -5,7 +5,10 @@
     <classes>
       <class name="com.atmecs.scripts.TutorialsNinjaScript">
         <methods>
+          <include name="pageflowValidations" invocation-numbers="0 1"/>
           <include name="cartflowValidations" invocation-numbers="0"/>
+          <include name="negativeDataValidation" invocation-numbers="0"/>
+          <include name="homePageLandingValidation"/>
           <include name="intitailizeBrowser"/>
           <include name="urlqw"/>
           <include name="end"/>

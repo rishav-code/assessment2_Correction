@@ -107,25 +107,38 @@ public class TutorialsNinja {
 	public void cartValidation(String iphoneAdded, String macAdded, String totalAmount, String UpdatedTotalAmount) {
 		log = new LogReport();
 		WebUtility.clickElement(loc.getlocator("loc.clickon.cart"));
+		WebUtility.clickElement(loc.getlocator("loc.viewcart.click"));
 
-		String cartiphonevalue = WebUtility.getElement(loc.getlocator("loc.cartnoofiphone.text")).getText();
+		String cartiphonevalue = WebUtility.getElement(loc.getlocator("loc.iphoneadded.text")).getText();
 		System.out.println(cartiphonevalue);
 		assertEquals(cartiphonevalue, iphoneAdded, "Assertion failed for iphone added in cart");
 		log.info("Assertion passed iphone added in cart");
 
-		String cartmacvalue = WebUtility.getElement(loc.getlocator("loc.cartnoofmac.text")).getText();
+		String cartmacvalue = WebUtility.getElement(loc.getlocator("loc.macadded.text")).getText();
 		System.out.println(cartmacvalue);
-		assertEquals(cartmacvalue, macAdded, "Assertion failed for iphone added in cart");
+		assertEquals(cartmacvalue, macAdded, "Assertion failed for mac added in cart");
 		log.info("Assertion passed mac added in cart");
-
-		String totalPrice = WebUtility.getElement(loc.getlocator("loc.totalprice.text")).getText();
+		WebUtility.scrollDownPage(500);
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String totalPrice = WebUtility.getElement(loc.getlocator("loc.totalamount.beforeupdate")).getText();
 		System.out.println(totalPrice);
 		assertEquals(totalPrice, "" + totalAmount, "Assertion failed for totalamount added in cart");
 		log.info("Assertion passed for total amount");
-		WebUtility.clickElement(loc.getlocator("loc.removeitemmac.click"));
-		WebUtility.clickElement(loc.getlocator("loc.clickon.cart"));
-		String updatedTotalPrice = WebUtility.getElement(loc.getlocator("loc.totalprice.text")).getText();
-		System.out.println(totalPrice);
+		WebUtility.clickElement(loc.getlocator("loc.mac.remove"));
+		WebUtility.scrollDownPage(500);
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String updatedTotalPrice = WebUtility.getElement(loc.getlocator("loc.totalamount.beforeupdate")).getText();
+		System.out.println(updatedTotalPrice);
 		assertEquals(updatedTotalPrice, "" + UpdatedTotalAmount, "Assertion failed for totalamount added in cart");
 		log.info("Assertion passed for total amount");
 
@@ -133,7 +146,7 @@ public class TutorialsNinja {
 
 	public void negativeDataSearch(String negativeData) {
 		log = new LogReport();
-		System.out.println("Hi");
+		
 		System.out.println("this is" + " " + negativeData);
 		WebUtility.clickElement(loc.getlocator("loc.search.text"));
 		WebUtility.clickAndSendText(loc.getlocator("loc.search.text"), TimeOut.TIMEOUT_INSECONDS, negativeData);

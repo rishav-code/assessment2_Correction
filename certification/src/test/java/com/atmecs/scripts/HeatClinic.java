@@ -24,7 +24,7 @@ public class HeatClinic extends TestBase{
 	
 	@BeforeClass
 	public void urlqw() {
-		baseClass=ReadProp.loadProperty(FilePath.CONFIG_FILE);
+		baseClass = ReadProp.loadProperty(FilePath.CONFIG_FILE);
 		url=baseClass.getProperty("url2");
 		driver.get(url);
 		driver.manage().window().maximize();

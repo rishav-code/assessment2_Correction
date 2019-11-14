@@ -1,21 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" ignored="0" total="11" passed="11">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="37127" started-at="2019-11-12T10:59:40Z" finished-at="2019-11-12T11:00:17Z">
+  <suite name="TutorialsNinjaSuite" duration-ms="35295" started-at="2019-11-14T06:05:00Z" finished-at="2019-11-14T06:05:35Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="37127" started-at="2019-11-12T10:59:40Z" finished-at="2019-11-12T11:00:17Z">
-      <class name="com.atmecs.scripts.HeatClinic">
-        <test-method status="PASS" signature="intitailizeBrowser()[pri:0, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="intitailizeBrowser" is-config="true" duration-ms="6436" started-at="2019-11-12T10:59:40Z" finished-at="2019-11-12T10:59:47Z">
+    <test name="Test" duration-ms="35295" started-at="2019-11-14T06:05:00Z" finished-at="2019-11-14T06:05:35Z">
+      <class name="com.atmecs.scripts.TutorialsNinjaScript">
+        <test-method status="PASS" signature="intitailizeBrowser()[pri:0, instance:com.atmecs.scripts.TutorialsNinjaScript@4bec1f0c]" name="intitailizeBrowser" is-config="true" duration-ms="5255" started-at="2019-11-14T06:05:00Z" finished-at="2019-11-14T06:05:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- intitailizeBrowser -->
-        <test-method status="PASS" signature="urlqw()[pri:0, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="urlqw" is-config="true" duration-ms="5074" started-at="2019-11-12T10:59:47Z" finished-at="2019-11-12T10:59:52Z">
+        <test-method status="PASS" signature="urlqw()[pri:0, instance:com.atmecs.scripts.TutorialsNinjaScript@4bec1f0c]" name="urlqw" is-config="true" duration-ms="7480" started-at="2019-11-14T06:05:05Z" finished-at="2019-11-14T06:05:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- urlqw -->
-        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="menuClick" duration-ms="4511" started-at="2019-11-12T10:59:53Z" data-provider="indexInput" finished-at="2019-11-12T10:59:57Z">
+        <test-method status="PASS" signature="homePageLandingValidation()[pri:1, instance:com.atmecs.scripts.TutorialsNinjaScript@4bec1f0c]" name="homePageLandingValidation" duration-ms="78" started-at="2019-11-14T06:05:13Z" finished-at="2019-11-14T06:05:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- homePageLandingValidation -->
+        <test-method status="PASS" signature="pageflowValidations(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.atmecs.scripts.TutorialsNinjaScript@4bec1f0c]" name="pageflowValidations" duration-ms="7737" started-at="2019-11-14T06:05:13Z" data-provider="TutorialsNinja" finished-at="2019-11-14T06:05:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[iPhone]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[$123.20]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Ex Tax: $101.00]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pageflowValidations -->
+        <test-method status="PASS" signature="pageflowValidations(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.atmecs.scripts.TutorialsNinjaScript@4bec1f0c]" name="pageflowValidations" duration-ms="5236" started-at="2019-11-14T06:05:21Z" data-provider="TutorialsNinja" finished-at="2019-11-14T06:05:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[MacBook Air]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[$1,202.00]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Ex Tax: $1,000.00]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pageflowValidations -->
+        <test-method status="PASS" signature="cartflowValidations(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.atmecs.scripts.TutorialsNinjaScript@4bec1f0c]" name="cartflowValidations" duration-ms="7186" started-at="2019-11-14T06:05:26Z" data-provider="TutorialsNinjaCart" finished-at="2019-11-14T06:05:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[iPhone]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[MacBook Air]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[$3,852.40]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[$246.40]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[NegativeData]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cartflowValidations -->
+        <test-method status="PASS" signature="negativeDataValidation(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:4, instance:com.atmecs.scripts.TutorialsNinjaScript@4bec1f0c]" name="negativeDataValidation" duration-ms="985" started-at="2019-11-14T06:05:33Z" data-provider="TutorialsNinjaCart" finished-at="2019-11-14T06:05:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[iPhone]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[MacBook Air]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[$3,852.40]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[$246.40]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[NegativeData]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- negativeDataValidation -->
+        <test-method status="PASS" signature="end()[pri:0, instance:com.atmecs.scripts.TutorialsNinjaScript@4bec1f0c]" name="end" is-config="true" duration-ms="852" started-at="2019-11-14T06:05:34Z" finished-at="2019-11-14T06:05:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- end -->
+      </class> <!-- com.atmecs.scripts.TutorialsNinjaScript -->
+    </test> <!-- Test -->
+  </suite> <!-- TutorialsNinjaSuite -->
+  <suite name="AssessmentSuite" duration-ms="0" started-at="2019-11-14T06:05:35Z" finished-at="2019-11-14T06:05:35Z">
+    <groups>
+    </groups>
+  </suite> <!-- AssessmentSuite -->
+  <suite name="HeatClinicSuite" duration-ms="38530" started-at="2019-11-14T06:04:21Z" finished-at="2019-11-14T06:05:00Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="38530" started-at="2019-11-14T06:04:21Z" finished-at="2019-11-14T06:05:00Z">
+      <class name="com.atmecs.scripts.HeatClinic">
+        <test-method status="PASS" signature="intitailizeBrowser()[pri:0, instance:com.atmecs.scripts.HeatClinic@14bf9759]" name="intitailizeBrowser" is-config="true" duration-ms="6395" started-at="2019-11-14T06:04:21Z" finished-at="2019-11-14T06:04:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intitailizeBrowser -->
+        <test-method status="PASS" signature="urlqw()[pri:0, instance:com.atmecs.scripts.HeatClinic@14bf9759]" name="urlqw" is-config="true" duration-ms="5089" started-at="2019-11-14T06:04:28Z" finished-at="2019-11-14T06:04:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- urlqw -->
+        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@14bf9759]" name="menuClick" duration-ms="4532" started-at="2019-11-14T06:04:34Z" data-provider="indexInput" finished-at="2019-11-14T06:04:38Z">
           <params>
             <param index="0">
               <value>
@@ -31,7 +173,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- menuClick -->
-        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="menuClick" duration-ms="3675" started-at="2019-11-12T10:59:57Z" data-provider="indexInput" finished-at="2019-11-12T11:00:01Z">
+        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@14bf9759]" name="menuClick" duration-ms="3700" started-at="2019-11-14T06:04:38Z" data-provider="indexInput" finished-at="2019-11-14T06:04:42Z">
           <params>
             <param index="0">
               <value>
@@ -47,7 +189,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- menuClick -->
-        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="menuClick" duration-ms="3530" started-at="2019-11-12T11:00:01Z" data-provider="indexInput" finished-at="2019-11-12T11:00:04Z">
+        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@14bf9759]" name="menuClick" duration-ms="4286" started-at="2019-11-14T06:04:42Z" data-provider="indexInput" finished-at="2019-11-14T06:04:46Z">
           <params>
             <param index="0">
               <value>
@@ -63,7 +205,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- menuClick -->
-        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="menuClick" duration-ms="3487" started-at="2019-11-12T11:00:04Z" data-provider="indexInput" finished-at="2019-11-12T11:00:08Z">
+        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@14bf9759]" name="menuClick" duration-ms="3512" started-at="2019-11-14T06:04:46Z" data-provider="indexInput" finished-at="2019-11-14T06:04:50Z">
           <params>
             <param index="0">
               <value>
@@ -79,7 +221,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- menuClick -->
-        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="menuClick" duration-ms="3544" started-at="2019-11-12T11:00:08Z" data-provider="indexInput" finished-at="2019-11-12T11:00:11Z">
+        <test-method status="PASS" signature="menuClick(java.lang.String, java.lang.String)[pri:1, instance:com.atmecs.scripts.HeatClinic@14bf9759]" name="menuClick" duration-ms="3600" started-at="2019-11-14T06:04:50Z" data-provider="indexInput" finished-at="2019-11-14T06:04:53Z">
           <params>
             <param index="0">
               <value>
@@ -95,7 +237,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- menuClick -->
-        <test-method status="PASS" signature="menuTravelTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="menuTravelTest" duration-ms="5152" started-at="2019-11-12T11:00:11Z" data-provider="logindata" finished-at="2019-11-12T11:00:17Z">
+        <test-method status="PASS" signature="menuTravelTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.atmecs.scripts.HeatClinic@14bf9759]" name="menuTravelTest" duration-ms="5702" started-at="2019-11-14T06:04:53Z" data-provider="logindata" finished-at="2019-11-14T06:04:59Z">
           <params>
             <param index="0">
               <value>
@@ -151,11 +293,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- menuTravelTest -->
-        <test-method status="PASS" signature="end()[pri:0, instance:com.atmecs.scripts.HeatClinic@57fffcd7]" name="end" is-config="true" duration-ms="797" started-at="2019-11-12T11:00:17Z" finished-at="2019-11-12T11:00:17Z">
+        <test-method status="PASS" signature="end()[pri:0, instance:com.atmecs.scripts.HeatClinic@14bf9759]" name="end" is-config="true" duration-ms="736" started-at="2019-11-14T06:04:59Z" finished-at="2019-11-14T06:05:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- end -->
       </class> <!-- com.atmecs.scripts.HeatClinic -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- HeatClinicSuite -->
 </testng-results>

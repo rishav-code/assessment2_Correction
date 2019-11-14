@@ -2,15 +2,19 @@ package com.atmecs.pages;
 
 import static org.testng.Assert.assertEquals;
 
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 
+import com.atmecs.constant.FilePath;
 import com.atmecs.constant.Findloc;
 import com.atmecs.constant.TimeOut;
 import com.atmecs.helper.CommonUtlity;
 import com.atmecs.reports.LogReport;
+import com.atmecs.util.ReadProp;
 
 public class HeatClinicPages {
 	WebDriver driver;
@@ -18,19 +22,21 @@ public class HeatClinicPages {
 	Actions action;
 	Findloc loc;
 	LogReport log;
+	Properties loc1;
 	int index = 1;
 
 	public HeatClinicPages(WebDriver driver) {
 		this.driver = driver;
 		WebUtlity = new CommonUtlity(driver);
 		loc = new Findloc();
+		loc1 = ReadProp.loadProperty(FilePath.LOCATOR_FILE);
 	}
 
 	public void menu(String index, String expectedTitle) {
 		log = new LogReport();
 		System.out.println(expectedTitle);
 
-		WebUtlity.clickElement(loc.getlocator("loc.menucommon.php").replace("xxx", index + ""));
+		WebUtlity.clickElement(loc1.getProperty("loc.menucommon.php").replace("xxx", index + ""));
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
@@ -109,6 +115,7 @@ public class HeatClinicPages {
 	public void increaseQuantity(String quantity, String expectedtotalupdatedprice) {
 		System.out.println(expectedtotalupdatedprice);
 		WebUtlity.clickElement(loc.getlocator("loc.increaseQuantity.button"));
+		WebUtlity.clearTextData(loc.getlocator("loc.increaseQuantity.button"));
 		WebUtlity.clickAndSendText(loc.getlocator("loc.increaseQuantity.button"), TimeOut.TIMEOUT_INSECONDS, quantity);
 		WebUtlity.clickElement(loc.getlocator("loc.clickonupdate.click"));
 		try {
